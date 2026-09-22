@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Store Archive</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-wrap">
+          <div class="brand-mark">A</div>
+          <div>
+            <p class="eyebrow">Archive</p>
+            <h1>App Store</h1>
+          </div>
+        </div>
+        <a class="download-button" href="downloads/App-Store-Archive.zip" download>
+          Download ZIP
+        </a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <p class="eyebrow accent">iOS app package library</p>
+          <h2>Browse archived App Store packages</h2>
+        </div>
+        <div class="search-box">
+          <label for="searchInput" class="sr-only">Search apps</label>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search app name or bundle ID"
+            aria-label="Search app archive"
+          />
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Archive summary">
+        <article class="stat-card">
+          <span class="stat-label">Apps</span>
+          <strong id="appCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Archive</span>
+          <strong>798.3 MB</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Platforms</span>
+          <strong>iOS</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Bundle IDs</span>
+          <strong id="bundleCount">0</strong>
+        </article>
+      </section>
+
+      <section class="archive-section">
+        <div class="section-heading">
+          <h3>App Archive</h3>
+          <span id="resultText">Showing 0 apps</span>
+        </div>
+        <div id="appGrid" class="app-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="download-panel">
+        <div class="download-copy">
+          <p class="eyebrow accent">Download package</p>
+          <h3>App Store archive</h3>
+        </div>
+        <div class="download-box">
+          <div class="download-row">
+            <span>Archive size</span>
+            <strong>798.3 MB</strong>
+          </div>
+          <a class="primary-button" href="downloads/App-Store-Archive.zip" download>
+            Download ZIP
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <template id="appCardTemplate">
+      <article class="app-card">
+        <div class="card-header">
+          <div>
+            <p class="app-platform">iOS</p>
+            <h4 class="app-name"></h4>
+          </div>
+          <span class="version-badge"></span>
+        </div>
+
+        <dl class="meta-list">
+          <div>
+            <dt>Bundle ID</dt>
+            <dd class="app-bundle"></dd>
+          </div>
+          <div>
+            <dt>Minimum OS</dt>
+            <dd class="app-min-os"></dd>
+          </div>
+          <div>
+            <dt>IPA File</dt>
+            <dd class="app-ipa"></dd>
+          </div>
+          <div>
+            <dt>File Size</dt>
+            <dd class="app-size"></dd>
+          </div>
+          <div>
+            <dt>Bundle Path</dt>
+            <dd class="app-path"></dd>
+          </div>
+          <div>
+            <dt>Archive Type</dt>
+            <dd class="app-archive"></dd>
+          </div>
+        </dl>
+
+        <details class="preview-panel">
+          <summary>Install App Preview</summary>
+          <pre class="preview-box"></pre>
+        </details>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
